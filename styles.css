@@ -1,0 +1,104 @@
+:root{
+  --bg:#050506;
+  --white:#ffffff;
+  --muted:#6b7280;
+  --accent:#06b6d4;
+  --panel:#ffffff;
+  --text-dark:#0b0b0c;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{background:var(--bg);color:var(--white);-webkit-font-smoothing:antialiased;}
+
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px;
+  gap:16px;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
+
+/* Brand left, larger */
+.brand-large a{
+  color:var(--white);
+  font-weight:800;
+  font-size:28px;
+  text-decoration:none;
+  letter-spacing:0.6px;
+}
+
+/* Navigation moved to right, white pill */
+.nav-panel-right{
+  background:var(--panel);
+  color:var(--text-dark);
+  border-radius:10px;
+  padding:8px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.nav-item{
+  color:var(--text-dark);
+  text-decoration:none;
+  padding:8px 12px;
+  font-weight:700;
+  border-radius:8px;
+  display:inline-block;
+}
+.nav-item:hover{background:#f3f4f6}
+
+/* Main container centers content */
+.container{
+  max-width:1000px;
+  margin:28px auto;
+  padding:18px;
+}
+
+/* Single white content block per page */
+.content-block{
+  background:var(--panel);
+  color:var(--text-dark);
+  padding:28px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.6);
+  line-height:1.6;
+}
+.content-block h1,
+.content-block h2{color:var(--text-dark);margin-top:0}
+.content-block ul{color:var(--text-dark);}
+
+/* Buttons */
+.cta-row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:#041017;
+  padding:10px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+}
+.btn.outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.06)}
+
+.site-footer{
+  text-align:center;
+  padding:22px 12px;
+  color:var(--muted);
+  margin-top:18px;
+}
+
+/* Responsive adjustments */
+@media (max-width:880px){
+  .brand-large a{font-size:22px}
+  .nav-panel-right{padding:6px;gap:6px}
+}
+@media (max-width:640px){
+  .site-header{flex-direction:column;align-items:flex-start;gap:10px}
+  .nav-panel-right{width:100%;overflow:auto}
+  .brand-large a{font-size:20px}
+  .content-block{padding:18px}
+}
